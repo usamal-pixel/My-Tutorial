@@ -1,0 +1,9 @@
+---
+applications:
+  - name: crudoperation
+    memory: 768M
+    instances: 1
+    path: target\crudoperation-0.0.1-SNAPSHOT.jar
+    random-route: true
+    services:
+      - mysqldb

@@ -1,0 +1,62 @@
+<div class="edit-form" *ngIf="currentTutorial">
+
+<h4>Tutorial</h4>
+<form>
+
+    <div class="form-group">
+
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" class="form-control"
+              [(ngModel)]="currentTutorial.title"/>
+
+    </div>
+    <div class="form-group">
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" class="form-control"
+              [(ngModel)]="currentTutorial.description"/>
+
+    </div>
+    <div class="form-group">
+
+        <label><strong>Status:</strong></label>
+        {{currentTutorial.published? "Published":"Pending"}}
+      
+    </div>
+
+    <button class="badge badge-primary mr-2" *ngIf="currentTutorial.published"
+    (click)="updatePublished(false)">
+        unpublish
+    </button>
+
+    <button class="badge badge-primary mr-2" *ngIf="!currentTutorial.published"
+                    (click)="updatePublished(true)"> publish</button>
+
+
+
+        <button class="badge badge-danger mr-2" 
+                    (click)="deleteTutorial()"> Delete</button>
+
+        <button class="badge badge-badge-success" type="submit"
+                    (click)="updateTutorial()"> Update</button>
+                    <p>{{message}}</p>
+
+        
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
